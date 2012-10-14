@@ -10,3 +10,5 @@ Quick Start:
 3. the acp_dir can use full absolute path that include *.acp files
 
 any comments please mailto yahaosoft@gmail.com,thanks!
+
+Last update at 2012.10.15
