@@ -1,14 +1,4 @@
-﻿#region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_Compression=4
-#AutoIt3Wrapper_Res_Comment=Code by Yahao
-#AutoIt3Wrapper_Res_Description=ConvertEPAutoCompToST2Snippet
-#AutoIt3Wrapper_Res_Fileversion=1.0.0.0
-#AutoIt3Wrapper_Res_FileVersion_AutoIncrement=y
-#AutoIt3Wrapper_Res_LegalCopyright=yahaosoft@gmail.com
-#AutoIt3Wrapper_res_requestedExecutionLevel=requireAdministrator
-#endregion ;**** Directives created by AutoIt3Wrapper_GUI ****
-
-Opt('MustDeclareVars', 1)
+﻿Opt('MustDeclareVars', 1)
 Opt("TrayIconHide", 1) ;0=show, 1=hide tray icon
 Opt("TrayIconDebug", 0) ;0=no info, 1=debug line info
 Opt("WinTitleMatchMode", 2) ;2 = Match any substring in the title
