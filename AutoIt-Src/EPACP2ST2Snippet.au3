@@ -7,6 +7,7 @@ Opt("WinTitleMatchMode", 2) ;2 = Match any substring in the title
 #include "inc\my_File.au3"
 
 #cs
+	Last update at 2012.10.15
 	Readme for start:
 
 	1. copy your *.acp files to \acp folder from EditPlus syntax directory
@@ -99,7 +100,7 @@ Func convert_acp_to_snippet()
 		$aAcp = StringSplit($sFileContent, "#T", 1)
 
 		$spHeader = "<snippet>" & @CRLF & @TAB & "<content><![CDATA["
-		$spFooter = @CRLF & @TAB & "<scope>source." & StringLower($sLanTitle) & "</scope>" & @CRLF & "</snippet>"
+		$spFooter = @CRLF & @TAB & "<scope>" & StringLower(getST2ScopeName($sLanTitle)) & "</scope>" & @CRLF & "</snippet>"
 
 		$iAcpCount = $aAcp[0]
 
@@ -140,3 +141,22 @@ Func convert_acp_to_snippet()
 
 	a($gWinTitle, "Total " & String($count) & " items was converted!")
 EndFunc   ;==>convert_acp_to_snippet
+
+Func getST2ScopeName($lan_title)
+	Select
+		Case $lan_title = "asp"
+			Return ("text.html.asp")
+		Case $lan_title = "css"
+			Return ("source.css")
+		Case $lan_title = "sql" Or $lan_title = "tsql"
+			Return ("source.sql")
+		Case $lan_title = "html" Or $lan_title = "htm"
+			Return ("text.html.basic")
+		Case $lan_title = "js"
+			Return ("source.js")
+		Case $lan_title = "txt"
+			Return ("text.plain")
+		Case Else
+			Return ("")
+	EndSelect
+EndFunc   ;==>getST2ScopeName
